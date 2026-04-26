@@ -8,6 +8,7 @@ services:
      db:
       condition: service_healthy
     environment:
+     SPRING_PROFILES_ACTIVE: docker
      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/Orders?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
      SPRING_DATASOURCE_USERNAME: root
      SPRING_DATASOURCE_PASSWORD: pranish24
@@ -25,3 +26,8 @@ services:
      interval: 5s
      timeout: 5s
      retries: 10
+    volumes:
+     - mysql-data:/var/lib/mysql
+
+volumes:
+     mysql-data:
