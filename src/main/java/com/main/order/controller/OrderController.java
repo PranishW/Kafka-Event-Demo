@@ -18,7 +18,7 @@ import com.main.order.model.OrderEvent;
 @RequestMapping("/orders")
 public class OrderController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
+	
 	private final KafkaTemplate<String, OrderEvent> kafkatemplate;
 	
 	public OrderController(KafkaTemplate<String, OrderEvent> kafkatemplate)
@@ -29,7 +29,7 @@ public class OrderController {
 	@PostMapping("/placeOrder")
 	public @ResponseBody ResponseEntity<String> placeOrder(@RequestBody OrderEvent orderEvent)
 	{
-	    logger.info(String.format("Order initiated food Item :- "+orderEvent.getFoodItem()+" quantity :- "+orderEvent.getQuantity()));
+	    System.out.println("Order initiated food Item :- "+orderEvent.getFoodItem()+" quantity :- "+orderEvent.getQuantity());
 		kafkatemplate.send("new_orders", orderEvent);
 		return ResponseEntity.ok("Your order has been placed successfully");
 	}
