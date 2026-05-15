@@ -13,7 +13,7 @@ services:
      SPRING_PROFILES_ACTIVE: docker
      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/Orders?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
      SPRING_DATASOURCE_USERNAME: root
-     SPRING_DATASOURCE_PASSWORD: pranish24
+     SPRING_DATASOURCE_PASSWORD: XXXXXXXX
   kafka:
    image: apache/kafka:latest
    container_name: kafka
@@ -41,7 +41,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: pranish24
+      MYSQL_ROOT_PASSWORD: XXXXXXXXX
       MYSQL_DATABASE: Orders
     ports:
       - "3306:3306"
