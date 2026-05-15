@@ -2,6 +2,7 @@
 Kafka Implementation in Springboot using Docker
 
 Docker Images used -
-Apacha Kafka Image
+Apacha Kafka:latest Image
 Mysql 8 Image
 Java 22 Image
+Maven 3.9 Image
